@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  padding: 16px 12px;
+  background-color: rgb(71 85 105);
+}
+
+input:focus {
+  border: none;
+}
