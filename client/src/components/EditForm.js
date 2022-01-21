@@ -44,7 +44,7 @@ const EditForm = ({ props, id }) => {
 
     return (
         <>
-            {editMenu && <div className="z-50 bg-slate-800 absolute h-screen w-max overflow-auto scrollbar scrollbar-thumb-gray-500  scrollbar-track-gray-900 text-white space-y-5 px-8 py-12">
+            {editMenu && <div className="z-50 bg-slate-800 absolute h-screen w-full overflow-auto scrollbar scrollbar-thumb-gray-500  scrollbar-track-gray-900 text-white space-y-5 px-8 py-12">
                 <div className="flex flex-row mb-12 justify-between items-center">
                     <h1 className="text-2xl font-bold">Update #{(props._id).slice(0, 6).toUpperCase()}</h1>
                     {/* X */}
@@ -59,16 +59,16 @@ const EditForm = ({ props, id }) => {
                         <h3 className="text-2xl mb-5 font-bold text-purple-700 ">Bill From</h3>
                         <label htmlFor="street">Street</label>
                         <input required name="street" onChange={handleChange} value={formValue.street || ""} type="text"></input>
-                        <div className="flex flex-row  items-center space-x-3 ">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col  items-center space-y-3 ">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="city">City:</label>
                                 <input required type="text" onChange={(event) => handleChange(event)} value={formValue.city} name="city" />
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="zipCode">Zip Code:</label>
                                 <input required type="text" onChange={handleChange} value={formValue.zipCode || ""} name="zipCode" />
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="country">Country:</label>
                                 <input required type="text" onChange={handleChange} value={formValue.country || ""} name="country" />
                             </div>
@@ -82,16 +82,16 @@ const EditForm = ({ props, id }) => {
                         <input required name="clientEmail" onChange={handleChange} value={formValue.clientEmail || ""} type="text"></input>
                         <label htmlFor="clientStreet">Street Adress:</label>
                         <input required name="clientStreet" onChange={handleChange} value={formValue.clientStreet || ""} className="" type="text"></input>
-                        <div className="flex flex-row items-center space-x-3">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col items-center space-y-3">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="clientCity" className="">City:</label>
                                 <input required type="text" onChange={handleChange} value={formValue.clientCity || ""} name="clientCity" />
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="clientZipCode">Zip Code:</label>
                                 <input required onChange={handleChange} value={formValue.clientZipCode || ""} type="text" name="clientZipCode" />
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex w-full  flex-col">
                                 <label htmlFor="clientCountry">Country:</label>
                                 <input required onChange={handleChange} value={formValue.clientCountry || ""} type="text" name="clientCountry" />
                             </div>

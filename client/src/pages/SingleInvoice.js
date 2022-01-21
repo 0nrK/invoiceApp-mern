@@ -8,7 +8,7 @@ import { useParams } from 'react-router'
 const SingleInvoice = ({ props }) => {
 
     return (
-        <div className="flex flex-row w-full h-max   bg-gray-800">
+        <div className="flex flex-col w-full h-max   bg-gray-800">
             <Sidebar />
             <InvoiceInfo />
         </div>

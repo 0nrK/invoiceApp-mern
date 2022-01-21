@@ -19,7 +19,7 @@ const InvoiceContainer = () => {
 
 
     return (
-        <div className="mt-12 px-3 md:mt-24 space-y-6">
+        <div className="mt-8 md:mt-24 space-y-6">
             {loading ? <span>A.</span>
                 :
                 data.slice(0, 6).map((invoice) => {

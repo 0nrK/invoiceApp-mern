@@ -75,12 +75,12 @@ const NewInvoice = () => {
 
                         </button>
                     </div>
-                    <form onSubmit={handleSubmit} className="relative flex flex-col overflow w-full">
+                    <form onSubmit={handleSubmit} className="relative  flex flex-col overflow w-full">
                         <div className="flex flex-col justify-center text-l space-y-3">
                             <h3 className="text-2xl text-purple-600">Bill From</h3>
                             <label htmlFor="street">Street</label>
                             <input required name="street" onChange={handleChange} value={formValue.street || ""} type="text"></input>
-                            <div className="flex flex-wrap md:flex-row space-y-3 items-center md:space-x-3 ">
+                            <div className="flex flex-wrap md:flex-row  items-center md:space-x-3 ">
                                 <div className="flex flex-col ">
                                     <label htmlFor="city">City:</label>
                                     <input required type="text" onChange={handleChange} value={formValue.city || ""} name="city" />
@@ -103,7 +103,7 @@ const NewInvoice = () => {
                             <input required name="clientEmail" onChange={handleChange} value={formValue.clientEmail || ""} type="text"></input>
                             <label htmlFor="clientStreet">Street:</label>
                             <input required name="clientStreet" onChange={handleChange} value={formValue.clientStreet || ""} className="" type="text"></input>
-                            <div className="flex flex-col  space-y-3 md:flex-row items-center md:space-x-3">
+                            <div className="flex flex-col  md:flex-row items-center md:space-x-3">
                                 <div className="flex w-full flex-col">
                                     <label htmlFor="clientCity" className="">City:</label>
                                     <input className="" required type="text" onChange={handleChange} value={formValue.clientCity || ""} name="clientCity" />
@@ -125,7 +125,7 @@ const NewInvoice = () => {
 
                                         return (
                                             <li key={i}>
-                                                <div className="flex flex-col md:flex-row space-y-3 md:space-x-3 items-center justify-between text-white text-xl ">
+                                                <div className="flex flex-col md:flex-row  md:space-x-3 items-center justify-between text-white text-xl ">
                                                     <input onChange={handleChange} type="text" name="itemName" className="w-full md:w-auto" placeholder="Item Name:"></input>
                                                     <input onChange={handleChange} type="number" name="itemQuantity" className="w-full md:w-24 " placeholder="Quantity:"></input>
                                                     <input onChange={handleChange} type="number" name="itemPrice" className="w-full md:w-28 " placeholder="Price:"></input>

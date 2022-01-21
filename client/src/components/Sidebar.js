@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sidebar = () => {
     return (
-        <nav className="w-full">
+        <nav className="w-full  top-0">
             <div className="p-5 bg-slate-900">
                 <img
                     className="rounded-full ml-auto w-12 h-12 object-cover"

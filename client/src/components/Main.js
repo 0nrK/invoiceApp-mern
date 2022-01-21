@@ -21,8 +21,8 @@ const Main = ({ props }) => {
 
 
     return (
-        <main className="max-w-screen-lg w-full px-3 overflow-hidden flex flex-col py-24  mx-auto flex-1">
-            <div className="flex flex-row px-1 items-center justify-between">
+        <main className="max-w-screen-lg  w-full p-6  flex flex-col  mx-auto ">
+            <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-col">
                     <h1 className="text-white  md:mb-4 text-4xl md:text-5xl">Invoices</h1>
                     <span className=" text-gray-300 ">{data.length} invoices</span>
@@ -37,7 +37,7 @@ const Main = ({ props }) => {
                                 className="invisible md:visible text-white text-xl">
                                 Filter by status
                             </span>
-                            <span className="sm:visible text-white text-xl">
+                            <span className="md:hidden text-white text-xl">
                                 Filter
                             </span>
                             {filterMenu ? <svg xmlns="http://www.w3.org/2000/svg" className="text-purple-300 h-6 w-6 transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,7 +49,7 @@ const Main = ({ props }) => {
                                 </svg>}
                         </div>
                         {filterMenu &&
-                            <ul className="flex flex-col cursor-pointer absolute top-8">
+                            <ul className="flex flex-col cursor-pointer absolute top-10 right-0">
                                 <button className="h-8 w-40 hover:bg-slate-500 bg-slate-600">
                                     <li className=" text-white">A</li>
                                 </button>

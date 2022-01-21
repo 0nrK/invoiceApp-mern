@@ -33,15 +33,16 @@ const InvoiceInfo = (props) => {
     }
 
 
+    console.log(data);
 
 
     return (
         <>
             {data.map((item) => (
-                <div className="w-full " key={item.id}>
+                <div className="w-full max-w-screen-lg mx-auto " key={item.id}>
 
                     {editMenu && <EditForm id={id} props={item} />}
-                    <div className="w-full sm:w-3/5  mx-auto text-white">
+                    <div className=" text-white">
                         <Link to="/">
                             <div className="group flex flex-row mt-12 mb-16 cursor-pointer items-center">
                                 <svg className="w-6 h-6 group-hover:scale-125 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -50,23 +51,23 @@ const InvoiceInfo = (props) => {
                                 </span>
                             </div>
                         </Link>
-                        <div className="flex flex-col sm:flex-row h-64 w-full rounded-2xl sm:h-32 px-5 bg-slate-700 items-center justify-between">
-                            <div className="space-x-5">
-                                <span className="ml-5 text-xl">Status:</span>
+                        <div className="flex flex-col  space-y-3 p-5  w-full   bg-slate-700 items-center justify-between">
+                            <div className="flex flex-row my-3 space-x-5">
+                                <span className="ml-5  text-xl">Status:</span>
                                 <span>{item.status}</span>
                             </div>
-                            <div className="flex flex-col space-y-3 sm:space-y-1 md:flex-row md:space-x-5 text-white ">
-                                <button onClick={handleDelete} className="rounded-md hover:bg-red-400 bg-red-500 md:px-12 px-4 py-1 md:py-3">Delete</button>
-                                <button onClick={() => setEditMenu(!editMenu)} className="rounded-md hover:bg-slate-400 bg-slate-500 md:px-9 px-3 py-1 md:py-3">Edit</button>
-                                <button className="rounded-md hover:bg-green-500 bg-green-600 md:px-16 px:5 py-3 md:py-3">Mark As Paid</button>
+                            <div className="flex flex-row space-x-5 text-white ">
+                                <button onClick={handleDelete} className="rounded-md hover:bg-red-400 p-4 bg-red-500">Delete</button>
+                                <button onClick={() => setEditMenu(!editMenu)} className="rounded-md hover:bg-slate-400 p-4 bg-slate-500">Edit</button>
+                                <button className="rounded-md hover:bg-green-500 bg-green-600  p-4">Mark As Paid</button>
                             </div>
                         </div>
-                        <div className="px-12 py-12 mt-12 flex flex-col bg-slate-700">
-                            <div className="flex flex-row items-center text-3xl ">
-                                <span className=" text-gray-400">#</span>
-                                <h1 className="  font-bold">{(item._id).slice(0, 6).toUpperCase()}</h1>
+                        <div className=" flex flex-col p-5 mt-12 space-y-12 bg-slate-700">
+                            <div className="flex flex-row  items-center  ">
+                                <span className="text-lg text-gray-400">#</span>
+                                <h1 className="text-2xl  font-bold">{(item._id).slice(0, 6).toUpperCase()}</h1>
                             </div>
-                            <div className="flex flex-row  justify-between mt-16 ">
+                            <div className="flex  flex-col space-y-2  justify-between mt-16 ">
                                 <div className="flex flex-col">
                                     <span className="text-l text-gray-300">Invoice Date:</span>
                                     <span className="font-bold mt-2 text-2xl">{(item.createdAt).slice(0, 10)}</span>
@@ -80,17 +81,17 @@ const InvoiceInfo = (props) => {
                                     <span className="font-bold  mt-2 text-l sm:text-2xl">{item.clientEmail}</span>
                                 </div>
                             </div>
-                            <div className="flex flex-row mt-12 items-center justify-between">
+                            <div className="flex flex-col space-y-2 mt-4">
                                 <div className="flex flex-col">
                                     <span className="text-l text-gray-300">Payment Date:</span>
                                     <span className="font-bold mt-2 text-2xl">{item.paymentDate}</span>
                                 </div>
-                                <div>
-                                    <span className="flex flex-row  text-xl space-x-5">
-                                        {item.clientStreet}
-                                    </span>
+                                <div className="flex flex-col self-end">
                                     <span>
                                         {item.clientZipCode}
+                                    </span>
+                                    <span className="text-xl">
+                                        {item.clientStreet}
                                     </span>
                                 </div>
                             </div>

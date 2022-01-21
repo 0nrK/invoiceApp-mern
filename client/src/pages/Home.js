@@ -9,7 +9,7 @@ const Home = ({ props }) => {
 
 
     return (
-        <div className="flex flex-col md:flex-row h-max w-full   bg-gray-800">
+        <div className="flex flex-col  h-screen w-full   bg-gray-800">
             <Sidebar />
             <NewInvoice />
             <Main props={props} />
