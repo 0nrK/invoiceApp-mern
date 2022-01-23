@@ -13,35 +13,21 @@ const InvoiceItem = ({ props }) => {
     const paymentDateDay = paymentDate.getDay()
     const paymentDateYear = paymentDate.getFullYear()
 
-
     const statusStyle =
     {
-        Pending: "bg-red-700 text-white rounded-md text-xl p-3 flex items-center space-x-2 flex-row",
-        Paid: "bg-green-800 text-white rounded-md text-xl p-3 flex items-center space-x-2 flex-row",
-        Draft: "bg-gray-400 text-black rounded-md text-xl p-3 flex items-center space-x-2 flex-row"
+        Pending: ["text-red-700 text-lg md:text-2xl underline"],
+        Paid: ["text-green-800 text-lg md:text-2xl underline"],
+        Draft: ["text-lg text-gray-900 md:text-2xl underline"]
     }
 
     return (
         <div className="">
-            <div className="flex flex-row space-between   bg-slate-700 p-5 hover:bg-slate-600 h-auto w-full rounded-lg">
-                <div className="space-y-12">
-                    <div>
-                        <span className="text-bust text-gray-400">#</span>
-                        <span className="text-white font-bold  text-xl">{props._id.slice(0 - 5).toUpperCase()}</span>
-
-                    </div>
-                    <div className="flex space-y-1 flex-col">
-                        <span className="text-bust  text-gray-200">{paymentDateDay + " " + paymentDateMonth + " " + paymentDateYear}</span>
-                        <span className="text-white font-bold text-3xl">$ {props.amount}</span>
-                    </div>
-                </div>
-                <div className="flex flex-col justify-between ml-auto">
-                    <span className=" text-gray-400 ">{props.clientName}</span>
-                    <div className={statusStyle.Draft}>
-                        <span className=" ">·</span>
-                        <span className="">{props.status}</span>
-                    </div>
-                </div>
+            <div className="flex flex-row p-3 md:p-8 justify-between space-x-5  items-center   bg-slate-700 hover:bg-slate-600 h-40 w-full rounded-xl">
+                <span className="text-lg text-purple-500  font-bold  md:text-2xl">#{props._id.slice(0 - 5).toUpperCase()}</span>
+                <span className="text-lg md:text-2xl font-bold text-gray-200 ">{props.clientName}</span>
+                <span className={statusStyle.status}>{props.status}</span>
+                <span className="text-lg md:text-lg  text-gray-200">{paymentDateDay + " " + paymentDateMonth + " " + paymentDateYear}</span>
+                <span className="text-lg text-white font-bold md:text-3xl">${props.amount}</span>
             </div>
         </div>
     );
