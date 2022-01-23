@@ -44,7 +44,7 @@ const EditForm = ({ props, id }) => {
 
     return (
         <>
-            {editMenu && <div className="z-50 bg-slate-800 absolute h-screen w-full overflow-auto scrollbar scrollbar-thumb-gray-500  scrollbar-track-gray-900 text-white space-y-5 px-8 py-12">
+            {editMenu && <div className="z-50 bg-slate-800 absolute md:relative  h-screen w-full overflow-auto scrollbar scrollbar-thumb-gray-500  scrollbar-track-gray-900 text-white space-y-5 px-8  py-12">
                 <div className="flex flex-row mb-12 justify-between items-center">
                     <h1 className="text-2xl font-bold">Update #{(props._id).slice(0, 6).toUpperCase()}</h1>
                     {/* X */}
@@ -54,7 +54,7 @@ const EditForm = ({ props, id }) => {
                         </svg>
                     </button>
                 </div>
-                <form onSubmit={handleSubmit} className="relative mt-12 overflow">
+                <form onSubmit={handleSubmit} className="relative mt-12  overflow">
                     <div className="flex flex-col justify-center  text-l space-y-5">
                         <h3 className="text-2xl mb-5 font-bold text-purple-700 ">Bill From</h3>
                         <label htmlFor="street">Street</label>

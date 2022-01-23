@@ -18,7 +18,6 @@ const InvoiceInfo = (props) => {
             try {
                 const res = await axios.get("http://localhost:5000/" + id)
                 setData([res.data]);
-                console.log(data);
                 setLoading(false)
             } catch (err) {
                 console.log(err);
@@ -32,15 +31,18 @@ const InvoiceInfo = (props) => {
         navigate("/")
     }
 
+    const handleMarkAsPaid = async () => {
+        setData((data) => [...data], data[0].status = "Paid")
+        await axios.put('http://localhost:5000/' + id, { data })
+            .catch((err) => { console.log(err) })
+    }
 
-    console.log(data);
 
 
     return (
         <>
             {data.map((item) => (
-                <div className="w-full max-w-screen-lg mx-auto " key={item.id}>
-
+                <div className="w-full max-w-screen-lg mx-auto " key={item._id}>
                     {editMenu && <EditForm id={id} props={item} />}
                     <div className=" text-white">
                         <Link to="/">
@@ -52,20 +54,20 @@ const InvoiceInfo = (props) => {
                             </div>
                         </Link>
                         <div className="flex flex-col  space-y-3 p-5  w-full   bg-slate-700 items-center justify-between">
-                            <div className="flex flex-row my-3 space-x-5">
+                            <div className="flex flex-row items-center my-3 space-x-5">
                                 <span className="ml-5  text-xl">Status:</span>
                                 <span>{item.status}</span>
                             </div>
                             <div className="flex flex-row space-x-5 text-white ">
-                                <button onClick={handleDelete} className="rounded-md hover:bg-red-400 p-4 bg-red-500">Delete</button>
+                                <button onClick={handleDelete} className="rounded-md hover:bg-red-500 p-4 bg-red-600">Delete</button>
                                 <button onClick={() => setEditMenu(!editMenu)} className="rounded-md hover:bg-slate-400 p-4 bg-slate-500">Edit</button>
-                                <button className="rounded-md hover:bg-green-500 bg-green-600  p-4">Mark As Paid</button>
+                                <button onClick={handleMarkAsPaid} className="rounded-md hover:bg-green-500 bg-green-600  p-4">Mark As Paid</button>
                             </div>
                         </div>
                         <div className=" flex flex-col p-5 mt-12 space-y-12 bg-slate-700">
                             <div className="flex flex-row  items-center  ">
                                 <span className="text-lg text-gray-400">#</span>
-                                <h1 className="text-2xl  font-bold">{(item._id).slice(0, 6).toUpperCase()}</h1>
+                                <h1 className="text-2xl text-purple-500 font-bold">{(item._id).slice(0, 6).toUpperCase()}</h1>
                             </div>
                             <div className="flex  flex-col space-y-2  justify-between mt-16 ">
                                 <div className="flex flex-col">
